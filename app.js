@@ -26,6 +26,14 @@ $(document).ready(function() {
 	var purpleCardImagePath = "/nfcu/images/credit-card_purple.png";
 	var productImagePathBlank = "/nfcu/images/credit-card_blank.png";
 
+  function showFooter() {
+    $stickyCompare.addClass(classVisible);
+  }
+
+  function hideFooter() {
+    $stickyCompare.removeClass(classVisible);
+  }
+
 	function modifyFooterDisplayState(productsArray) {
 		var count = countProductsSelectedInArray(productsArray);
 		console.log("count: ", count);
