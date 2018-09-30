@@ -28,7 +28,7 @@ $(document).ready(function() {
 		$stickyCompare.animate({
 			bottom: "0px",
 			height: "180px"
-		}, 500);
+		}, 200);
   }
 
   function hideFooter() {
@@ -40,16 +40,6 @@ $(document).ready(function() {
     $uncheckedCheckboxes.attr('disabled', true);
     $uncheckedCheckboxes.next().addClass(classDisabledLabel);
   }
-
-  function createStickyCompare(productsArray) {
-    console.log(productsArray);
-    // var content = "";
-    // $.each(productsArray, function(index, product) {
-    //   content += "<div class='cell'><p>" + product + "</p></div>";
-    // });
-    // $(".compare-btn").prepend(content);
-  }
-
 
   function disableUncheckedInputs(array) {
     if (allSlotsFilled) {
@@ -109,45 +99,54 @@ $(document).ready(function() {
     // console.log(content);
   }
 
-  $($label).on("click", function(e) {
-    // The target is the label. A clicked label marks the input element right before it as "checked."
-    var $clickedLabel = $(e.target);
-    var $input = $clickedLabel.prev();
-    var clickedInputNotChecked = !$input[0].checked;
+	function setEventListeners() {
+		$($label).on("click", function(e) {
+			// The target is the label. A clicked label marks the input element right before it as "checked."
+			var $clickedLabel = $(e.target);
+			var $input = $clickedLabel.prev();
+			var clickedInputNotChecked = !$input[0].checked;
 
-      if (clickedInputNotChecked) {
-        var clickedProduct = $clickedLabel.text();
-				console.log(clickedProduct);
-        // if (productsArray.length === 0) {
-        if ($.isEmptyObject(productsArray)) {
-          productsArray = setUpProductsArray(productsArray, clickedProduct);
-          console.log(productsArray);
-					showFooter();
-          redrawCompareBottom(productsArray);
-          return;
-        } else {
-          // Find the first NULL spot and insert product in there.
-          productsArray = addProductIntoEmptySlot(productsArray, clickedProduct);
-        }
+				if (clickedInputNotChecked) {
+					var clickedProduct = $clickedLabel.text();
+					console.log(clickedProduct);
+					// if (productsArray.length === 0) {
+					if ($.isEmptyObject(productsArray)) {
+						productsArray = setUpProductsArray(productsArray, clickedProduct);
+						console.log(productsArray);
+						showFooter();
+						redrawCompareBottom(productsArray);
+						return;
+					} else {
+						// Find the first NULL spot and insert product in there.
+						productsArray = addProductIntoEmptySlot(productsArray, clickedProduct);
+					}
 
-        console.log(productsArray);
+					console.log(productsArray);
 
-        // Check if all 3 products have been selected. If so, disable the other checkboxes.
-        allSlotsFilled = checkForEmptySlots(productsArray);
-        if (allSlotsFilled) {
-          disableUncheckedInputs(productsArray);
-        }
+					// Check if all 3 products have been selected. If so, disable the other checkboxes.
+					allSlotsFilled = checkForEmptySlots(productsArray);
+					if (allSlotsFilled) {
+						disableUncheckedInputs(productsArray);
+					}
 
-        redrawCompareBottom(productsArray);
+					redrawCompareBottom(productsArray);
 
-        if ( $clickedLabel.hasClass(classDisabledLabel) ) {
-          return false;
-        }
+					if ( $clickedLabel.hasClass(classDisabledLabel) ) {
+						return false;
+					}
 
-    } else {  // If a checkbox is being deselcted...
-      // console.log("It is now unchecked");
-    }
+			} else {  // If a checkbox is being deselcted...
+				// console.log("It is now unchecked");
+			}
+		});
+	}
 
-  });
+	function init() {
+		setEventListeners();
+	}
+
+	if ($stickyCompare.length > 0) {
+		init();
+	}
 
 });
