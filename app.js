@@ -28,10 +28,13 @@ $(document).ready(function() {
 
   function showFooter() {
     $stickyCompare.addClass(classVisible);
-		$stickyCompare.animate({
-			bottom: "0px",
-			height: "180px"
-		}, 200);
+		// $stickyCompare.animate({
+		// 	bottom: "0px",
+		// 	height: "180px"
+		// }, 500, "linear");
+		// $stickyCompare.animate({
+		// 	bottom: "0px"
+		// }, 500, "linear");
   }
 
   function hideFooter() {
@@ -152,8 +155,8 @@ $(document).ready(function() {
 					if ($.isEmptyObject(productsArray)) {
 						productsArray = setUpProductsArray(productsArray, clickedProduct);
 						console.log(productsArray);
-						showFooter();
 						redrawCompareBottom(productsArray);
+						showFooter();
 						modifyCompareButtonState(productsArray);
 						return;
 					} else {
