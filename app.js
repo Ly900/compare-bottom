@@ -6,17 +6,15 @@ $(document).ready(function() {
   var $label = $("label.product-label");
   var $checkmark = $("label");
   var $productContainer = $(".product-container");
+	var $compareButton = $(".sticky-compare__compare-btn");
   // var $uncheckedCheckboxes = $("input:checkbox:not(:checked)");
 
   // Class Variables
   var classVisible = "sticky-compare_display-visible";
   var classDisabledLabel = "disabled-label";
+	var compareButtonDisabled = ".sticky-compare__compare-btn_disabled";
 
-  // State Variables
-  stickyCompareDisplayed = false;
-  isChecked = $(this)
-
-  // Compare Array
+	// Compare Array
   var productsArray = [];
 
 	// Location of Images
@@ -99,6 +97,24 @@ $(document).ready(function() {
     // console.log(content);
   }
 
+	function countProductsSelectedInArray(productsArray) {
+		var count = 0;
+		$.each(productsArray, function(index, value) {
+			if (value !== null) {
+				count++;
+			}
+		});
+		return count;
+	}
+
+	function modifyCompareButtonState(productsArray) {
+		var length = countProductsSelectedInArray(productsArray);
+		console.log("length: ", length);
+		if (length > 1) {
+			$compareButton.removeClass("sticky-compare__compare-btn_disabled");
+		}
+	}
+
 	function setEventListeners() {
 		$($label).on("click", function(e) {
 			// The target is the label. A clicked label marks the input element right before it as "checked."
@@ -116,6 +132,7 @@ $(document).ready(function() {
 						console.log(productsArray);
 						showFooter();
 						redrawCompareBottom(productsArray);
+						modifyCompareButtonState(productsArray);
 						return;
 					} else {
 						// Find the first NULL spot and insert product in there.
@@ -136,6 +153,7 @@ $(document).ready(function() {
 
 					// Redraw the Compare Bottom with every click.
 					redrawCompareBottom(productsArray);
+					modifyCompareButtonState(productsArray);
 
 			} else {  // If a checkbox is being deselcted...
 				// console.log("It is now unchecked");
