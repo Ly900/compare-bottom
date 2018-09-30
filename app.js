@@ -7,12 +7,13 @@ $(document).ready(function() {
   var $checkmark = $("label");
   var $productContainer = $(".product-container");
 	var $compareButton = $(".sticky-compare__compare-btn");
+	var $compareButtonDisabled = $(".sticky-compare__compare-btn_disabled");
   // var $uncheckedCheckboxes = $("input:checkbox:not(:checked)");
 
   // Class Variables
   var classVisible = "sticky-compare_display-visible";
   var classDisabledLabel = "disabled-label";
-	var compareButtonDisabled = ".sticky-compare__compare-btn_disabled";
+	var classCompareButtonDisabled = "sticky-compare__compare-btn_disabled";
 
 	// Compare Array
   var productsArray = [];
@@ -111,12 +112,17 @@ $(document).ready(function() {
 		var length = countProductsSelectedInArray(productsArray);
 		console.log("length: ", length);
 		if (length > 1) {
-			$compareButton.removeClass("sticky-compare__compare-btn_disabled");
+			$compareButton.removeClass("sticky-compare__compare-btn_disabled")
+										.prop("disabled", false);
 		}
 	}
 
+	function disableCompareButton() {
+		$compareButton.prop("disabled", true);
+	}
+
 	function setEventListeners() {
-		$($label).on("click", function(e) {
+		$label.on("click", function(e) {
 			// The target is the label. A clicked label marks the input element right before it as "checked."
 			var $clickedLabel = $(e.target);
 			var $input = $clickedLabel.prev();
@@ -159,10 +165,22 @@ $(document).ready(function() {
 				// console.log("It is now unchecked");
 			}
 		});
+
+		$compareButton.on("click", function(e) {
+			if ( $(this).hasClass(classCompareButtonDisabled) ) {
+				e.preventDefault();
+				return false;
+				console.log("disabled");
+			} else {
+				console.log("regular button clicked");
+			}
+		});
+
 	}
 
 	function init() {
 		setEventListeners();
+		disableCompareButton();
 	}
 
 	if ($stickyCompare.length > 0) {

@@ -45,8 +45,11 @@ body {
 		background: #378a37;
 		border: none;
 	}
-	&__compare-btn_disabled {
+	&__compare-btn_disabled,
+	&__compare-btn_disabled:hover,
+	&__compare-btn_disabled:active {
 		background: #378a3763;
+		cursor: default;
 	}
 }
 

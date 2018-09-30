@@ -36,8 +36,9 @@ body {
     padding: 1em;
     background: #378a37;
     border: none; }
-  .sticky-compare__compare-btn_disabled {
-    background: #378a3763; }
+  .sticky-compare__compare-btn_disabled, .sticky-compare__compare-btn_disabled:hover, .sticky-compare__compare-btn_disabled:active {
+    background: #378a3763;
+    cursor: default; }
 
 .sticky-compare_display-visible {
   bottom: 0; }
