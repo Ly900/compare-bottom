@@ -21,7 +21,7 @@ body {
     display: table-cell;
     // vertical-align: middle;
     padding: 1.5em;
-		background: yellow;
+		// background: yellow;
     border:0 transparent solid;
     border-width: 0 0.5em;
     background-clip: padding-box;
@@ -32,7 +32,7 @@ body {
 	&__image {
 		width: 150px;
 		display: block;
-		border: 2px solid purple;
+		// border: 2px solid purple;
 		min-width: 50px;
 	}
 	&__compare-btn-container {

@@ -21,7 +21,6 @@ body {
   .sticky-compare .cell {
     display: table-cell;
     padding: 1.5em;
-    background: yellow;
     border: 0 transparent solid;
     border-width: 0 0.5em;
     background-clip: padding-box; }
@@ -30,7 +29,6 @@ body {
   .sticky-compare__image {
     width: 150px;
     display: block;
-    border: 2px solid purple;
     min-width: 50px; }
   .sticky-compare__compare-btn-container {
     vertical-align: middle; }
