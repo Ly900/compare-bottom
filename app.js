@@ -26,13 +26,15 @@ $(document).ready(function() {
 	var purpleCardImagePath = "/nfcu/images/credit-card_purple.png";
 	var productImagePathBlank = "/nfcu/images/credit-card_blank.png";
 
-  function showFooter() {
-    $stickyCompare.addClass(classVisible);
-  }
-
-  function hideFooter() {
-    $stickyCompare.removeClass(classVisible);
-  }
+	function modifyFooterDisplayState(productsArray) {
+		var count = countProductsSelectedInArray(productsArray);
+		console.log("count: ", count);
+		if (count >=1) {
+			showFooter();
+		} else {
+			hideFooter();
+		}
+	}
 
   function disableUncheckedCheckboxes() {
     var $uncheckedCheckboxes = $("input:checkbox:not(:checked)")
@@ -152,7 +154,8 @@ $(document).ready(function() {
 						productsArray = setUpProductsArray(productsArray, clickedProduct);
 						console.log(productsArray);
 						redrawCompareBottom(productsArray);
-						showFooter();
+						modifyFooterDisplayState(productsArray);
+						// modifyFooterDisplayState(productsArray);
 						modifyCompareButtonState(productsArray);
 						return;
 					} else {
@@ -190,10 +193,14 @@ $(document).ready(function() {
 				});
 
 				console.log(productsArray);
+
 				// Redraw the Compare Bottom with every click.
 				redrawCompareBottom(productsArray);
 				modifyCompareButtonState(productsArray);
 			}
+
+			modifyFooterDisplayState(productsArray);
+
 		});
 
 		$compareButton.on("click", function(e) {
