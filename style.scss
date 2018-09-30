@@ -21,20 +21,23 @@ body {
     display: table-cell;
     // vertical-align: middle;
     padding: 1.5em;
-    // border: 1px solid red;
+		background: yellow;
     border:0 transparent solid;
     border-width: 0 0.5em;
     background-clip: padding-box;
-    img {
-      display: block;
-      border: 2px solid purple;
-      width: 100%;
-      min-width: 50px;
-    }
     p {
       margin: 0;
     }
   }
+	&__image {
+		width: 150px;
+		display: block;
+		border: 2px solid purple;
+		min-width: 50px;
+	}
+	&__compare-btn-container {
+		vertical-align: middle;
+	}
 }
 
 .sticky-compare_display-visible {

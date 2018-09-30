@@ -18,8 +18,9 @@ $(document).ready(function() {
 
   // Compare Array
   var productsArray = [];
-  // console.log(productsArray);
-  // console.log(productsArray.length);
+
+	// Location of Images
+	var productImagePath = "/nfcu/images/credit-card.png";
 
   function showFooter() {
     $stickyCompare.addClass(classVisible);
@@ -91,8 +92,8 @@ $(document).ready(function() {
 
   function redrawCompareBottom(productsArray) {
     var content = "";
-    $.each(productsArray, function(index, value) {
-      content += "<div class='cell'><p>" + value + "</p></div>";
+    $.each(productsArray, function(index) {
+      content += "<div class='cell'><img src='/nfcu/images/credit-card.png' class='sticky-compare__image'></div>";
     });
     $productContainer.html(content);
     // console.log(content);

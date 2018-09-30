@@ -21,16 +21,19 @@ body {
   .sticky-compare .cell {
     display: table-cell;
     padding: 1.5em;
+    background: yellow;
     border: 0 transparent solid;
     border-width: 0 0.5em;
     background-clip: padding-box; }
-    .sticky-compare .cell img {
-      display: block;
-      border: 2px solid purple;
-      width: 100%;
-      min-width: 50px; }
     .sticky-compare .cell p {
       margin: 0; }
+  .sticky-compare__image {
+    width: 150px;
+    display: block;
+    border: 2px solid purple;
+    min-width: 50px; }
+  .sticky-compare__compare-btn-container {
+    vertical-align: middle; }
 
 .sticky-compare_display-visible {
   bottom: 0; }
