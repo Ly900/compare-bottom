@@ -3,13 +3,13 @@
 
 	  <div class="product-container">
 	    <div class="cell">
-	      <p>Card Name</p>
+	      <img src="/nfcu/images/credit-card_blank.png" class='sticky-compare__image'>
 	    </div>
 	    <div class="cell">
-	      <p>Card Name</p>
+	      <img src="/nfcu/images/credit-card_blank.png" class='sticky-compare__image'>
 	    </div>
 	    <div class="cell">
-	      <p>Card Name</p>
+	      <img src="/nfcu/images/credit-card_blank.png" class='sticky-compare__image'>
 	    </div>
 	  </div>
 

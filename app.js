@@ -25,6 +25,10 @@ $(document).ready(function() {
 
   function showFooter() {
     $stickyCompare.addClass(classVisible);
+		$stickyCompare.animate({
+			bottom: "0px",
+			height: "180px"
+		}, 500);
   }
 
   function hideFooter() {
@@ -118,8 +122,8 @@ $(document).ready(function() {
         if ($.isEmptyObject(productsArray)) {
           productsArray = setUpProductsArray(productsArray, clickedProduct);
           console.log(productsArray);
+					showFooter();
           redrawCompareBottom(productsArray);
-          showFooter();
           return;
         } else {
           // Find the first NULL spot and insert product in there.
