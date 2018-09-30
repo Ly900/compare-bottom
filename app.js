@@ -181,7 +181,8 @@ $(document).ready(function() {
 				console.log("label: ", clickedProduct);
 				$.each(productsArray, function(index, value) {
 					if (value === clickedProduct) {
-						productsArray[index] = null;
+						productsArray.splice(index, 1);
+						productsArray.push(null);
 					}
 				});
 
