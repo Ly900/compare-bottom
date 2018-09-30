@@ -88,16 +88,16 @@ $(document).ready(function() {
     var content = "";
     $.each(productsArray, function(index, value) {
 			switch (value) {
-				case "Green Card":
+				case "green-card":
 					content += "<div class='cell'><img src='" + greenCardImagePath + "' class='sticky-compare__image'></div>";
 					break;
-				case "Blue Card":
+				case "blue-card":
 					content += "<div class='cell'><img src='" + blueCardImagePath + "' class='sticky-compare__image'></div>";
 					break;
-				case "Purple Card":
+				case "purple-card":
 					content += "<div class='cell'><img src='" + purpleCardImagePath + "' class='sticky-compare__image'></div>";
 					break;
-				case "Pink Card":
+				case "pink-card":
 					content += "<div class='cell'><img src='" + pinkCardImagePath + "' class='sticky-compare__image'></div>";
 					break;
 				default:
@@ -141,8 +141,8 @@ $(document).ready(function() {
 
 				// Click events for if the checkbox is unchecked and being selected...
 				if (clickedInputNotChecked) {
-					var clickedProduct = $clickedLabel.text();
-					console.log(clickedProduct);
+					var clickedProduct = $clickedLabel.attr("for");
+					console.log("clicked product: ", clickedProduct);
 
 					// If array is initially empty, add the first product and set the other slots as NULL.
 					if ($.isEmptyObject(productsArray)) {
@@ -178,9 +178,7 @@ $(document).ready(function() {
 			// Click events for if the checkbox is checked and being unselected...
 			else {
 				console.log(productsArray);
-				console.log("It is now unchecked");
-				console.log($clickedLabel);
-				console.log($input);
+				console.log("input: ", $input);
 			}
 		});
 
