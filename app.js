@@ -125,6 +125,9 @@ $(document).ready(function() {
 		if (length > 1) {
 			$compareButton.removeClass("sticky-compare__compare-btn_disabled")
 										.prop("disabled", false);
+		} else {
+			$compareButton.addClass("sticky-compare__compare-btn_disabled")
+										.prop("disabled", true);
 		}
 	}
 
