@@ -23,20 +23,20 @@
 	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>
 
 	<div class="checkbox">
-	  <input type="checkbox" id="morerewards">
-	  <label for="morerewards" class="product-label">Green Card</label>
+	  <input type="checkbox" id="green-card">
+	  <label for="green-card" class="product-label">Green Card</label>
 	</div>
 	<div class="checkbox">
-	  <input type="checkbox" id="nrewards">
-	  <label for="nrewards" class="product-label">Blue Card</label>
+	  <input type="checkbox" id="blue-card">
+	  <label for="blue-card" class="product-label">Blue Card</label>
 	</div>
 	<div class="checkbox">
-	  <input type="checkbox" id="cashrewards">
-	  <label for="cashrewards" class="product-label">Pink Card</label>
+	  <input type="checkbox" id="pink-card">
+	  <label for="pink-card" class="product-label">Pink Card</label>
 	</div>
 	<div class="checkbox">
-	  <input type="checkbox" id="onetoomany">
-	  <label for="onetoomany" class="product-label">Purple Card</label>
+	  <input type="checkbox" id="purple-card">
+	  <label for="purple-card" class="product-label">Purple Card</label>
 	</div>
 
 	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>

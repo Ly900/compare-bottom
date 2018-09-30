@@ -28,13 +28,6 @@ $(document).ready(function() {
 
   function showFooter() {
     $stickyCompare.addClass(classVisible);
-		// $stickyCompare.animate({
-		// 	bottom: "0px",
-		// 	height: "180px"
-		// }, 500, "linear");
-		// $stickyCompare.animate({
-		// 	bottom: "0px"
-		// }, 500, "linear");
   }
 
   function hideFooter() {
@@ -180,9 +173,14 @@ $(document).ready(function() {
 					redrawCompareBottom(productsArray);
 					modifyCompareButtonState(productsArray);
 
-			} else {  // If a checkbox is being deselected...
+			}
+
+			// Click events for if the checkbox is checked and being unselected...
+			else {
 				console.log(productsArray);
 				console.log("It is now unchecked");
+				console.log($clickedLabel);
+				console.log($input);
 			}
 		});
 
