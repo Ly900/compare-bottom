@@ -32,6 +32,12 @@ body {
     min-width: 50px; }
   .sticky-compare__compare-btn-container {
     vertical-align: middle; }
+  .sticky-compare__compare-btn {
+    padding: 1em;
+    background: #378a37;
+    border: none; }
+  .sticky-compare__compare-btn_disabled {
+    background: #378a3763; }
 
 .sticky-compare_display-visible {
   bottom: 0; }

@@ -40,6 +40,14 @@ body {
 	&__compare-btn-container {
 		vertical-align: middle;
 	}
+	&__compare-btn {
+		padding: 1em;
+		background: #378a37;
+		border: none;
+	}
+	&__compare-btn_disabled {
+		background: #378a3763;
+	}
 }
 
 .sticky-compare_display-visible {

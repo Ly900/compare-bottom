@@ -109,7 +109,8 @@ $(document).ready(function() {
 				if (clickedInputNotChecked) {
 					var clickedProduct = $clickedLabel.text();
 					console.log(clickedProduct);
-					// if (productsArray.length === 0) {
+
+					// If array is initially empty, add the first product and set the other slots as NULL.
 					if ($.isEmptyObject(productsArray)) {
 						productsArray = setUpProductsArray(productsArray, clickedProduct);
 						console.log(productsArray);
@@ -128,12 +129,13 @@ $(document).ready(function() {
 					if (allSlotsFilled) {
 						disableUncheckedInputs(productsArray);
 					}
-
-					redrawCompareBottom(productsArray);
-
+					// If a lable with the class of disabled is clicked, do nothing.
 					if ( $clickedLabel.hasClass(classDisabledLabel) ) {
 						return false;
 					}
+
+					// Redraw the Compare Bottom with every click.
+					redrawCompareBottom(productsArray);
 
 			} else {  // If a checkbox is being deselcted...
 				// console.log("It is now unchecked");
