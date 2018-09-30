@@ -12,6 +12,7 @@ body {
   padding: 2% 0;
   position: fixed;
   bottom: -1000px;
+  height: 0;
   left: 0;
   width: 100%;
   transition: bottom .2s; }
@@ -41,7 +42,8 @@ body {
     cursor: default; }
 
 .sticky-compare_display-visible {
-  bottom: 0; }
+  bottom: 0;
+  height: 180px; }
 
 .disabled-label {
   color: darkgray;
