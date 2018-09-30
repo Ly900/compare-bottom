@@ -137,11 +137,11 @@ $(document).ready(function() {
 			// The target is the label. A clicked label marks the input element right before it as "checked."
 			var $clickedLabel = $(e.target);
 			var $input = $clickedLabel.prev();
+			var clickedProduct = $clickedLabel.attr("for");
 			var clickedInputNotChecked = !$input[0].checked;
 
 				// Click events for if the checkbox is unchecked and being selected...
 				if (clickedInputNotChecked) {
-					var clickedProduct = $clickedLabel.attr("for");
 					console.log("clicked product: ", clickedProduct);
 
 					// If array is initially empty, add the first product and set the other slots as NULL.
@@ -171,14 +171,24 @@ $(document).ready(function() {
 
 					// Redraw the Compare Bottom with every click.
 					redrawCompareBottom(productsArray);
+
 					modifyCompareButtonState(productsArray);
 
 			}
 
 			// Click events for if the checkbox is checked and being unselected...
 			else {
+				console.log("label: ", clickedProduct);
+				$.each(productsArray, function(index, value) {
+					if (value === clickedProduct) {
+						productsArray[index] = null;
+					}
+				});
+
 				console.log(productsArray);
-				console.log("input: ", $input);
+				// Redraw the Compare Bottom with every click.
+				redrawCompareBottom(productsArray);
+				modifyCompareButtonState(productsArray);
 			}
 		});
 
