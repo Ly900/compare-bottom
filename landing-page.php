@@ -24,19 +24,19 @@
 
 	<div class="checkbox">
 	  <input type="checkbox" id="morerewards">
-	  <label for="morerewards" class="product-label">More Rewards</label>
+	  <label for="morerewards" class="product-label">Green Card</label>
 	</div>
 	<div class="checkbox">
 	  <input type="checkbox" id="nrewards">
-	  <label for="nrewards" class="product-label">nRewards</label>
+	  <label for="nrewards" class="product-label">Blue Card</label>
 	</div>
 	<div class="checkbox">
 	  <input type="checkbox" id="cashrewards">
-	  <label for="cashrewards" class="product-label">Cash Rewards</label>
+	  <label for="cashrewards" class="product-label">Pink Card</label>
 	</div>
 	<div class="checkbox">
 	  <input type="checkbox" id="onetoomany">
-	  <label for="onetoomany" class="product-label">Extra Card</label>
+	  <label for="onetoomany" class="product-label">Purple Card</label>
 	</div>
 
 	<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</p>

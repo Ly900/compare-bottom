@@ -19,7 +19,11 @@ $(document).ready(function() {
   var productsArray = [];
 
 	// Location of Images
-	var productImagePath = "/nfcu/images/credit-card.png";
+	var redCardImagePath = "/nfcu/images/credit-card_red.png";
+	var blueCardImagePath = "/nfcu/images/credit-card_blue.png";
+	var greenCardImagePath = "/nfcu/images/credit-card_green.png";
+	var pinkCardImagePath = "/nfcu/images/credit-card_pink.png";
+	var purpleCardImagePath = "/nfcu/images/credit-card_purple.png";
 	var productImagePathBlank = "/nfcu/images/credit-card_blank.png";
 
   function showFooter() {
@@ -87,10 +91,21 @@ $(document).ready(function() {
   function redrawCompareBottom(productsArray) {
     var content = "";
     $.each(productsArray, function(index, value) {
-			if (value === null) {
-				content += "<div class='cell'><img src='" + productImagePathBlank + "' class='sticky-compare__image'></div>";
-			} else {
-				content += "<div class='cell'><img src='" + productImagePath + "' class='sticky-compare__image'></div>";
+			switch (value) {
+				case "Green Card":
+					content += "<div class='cell'><img src='" + greenCardImagePath + "' class='sticky-compare__image'></div>";
+					break;
+				case "Blue Card":
+					content += "<div class='cell'><img src='" + blueCardImagePath + "' class='sticky-compare__image'></div>";
+					break;
+				case "Purple Card":
+					content += "<div class='cell'><img src='" + purpleCardImagePath + "' class='sticky-compare__image'></div>";
+					break;
+				case "Pink Card":
+					content += "<div class='cell'><img src='" + pinkCardImagePath + "' class='sticky-compare__image'></div>";
+					break;
+				default:
+					content += "<div class='cell'><img src='" + productImagePathBlank + "' class='sticky-compare__image'></div>";
 			}
 
     });
@@ -128,6 +143,7 @@ $(document).ready(function() {
 			var $input = $clickedLabel.prev();
 			var clickedInputNotChecked = !$input[0].checked;
 
+				// Click events for if the checkbox is unchecked and being selected...
 				if (clickedInputNotChecked) {
 					var clickedProduct = $clickedLabel.text();
 					console.log(clickedProduct);
@@ -161,8 +177,9 @@ $(document).ready(function() {
 					redrawCompareBottom(productsArray);
 					modifyCompareButtonState(productsArray);
 
-			} else {  // If a checkbox is being deselcted...
-				// console.log("It is now unchecked");
+			} else {  // If a checkbox is being deselected...
+				console.log(productsArray);
+				console.log("It is now unchecked");
 			}
 		});
 
