@@ -19,12 +19,12 @@ $(document).ready(function() {
   var productsArray = [];
 
 	// Location of Images
-	var redCardImagePath = "/nfcu/images/credit-card_red.png";
-	var blueCardImagePath = "/nfcu/images/credit-card_blue.png";
-	var greenCardImagePath = "/nfcu/images/credit-card_green.png";
-	var pinkCardImagePath = "/nfcu/images/credit-card_pink.png";
-	var purpleCardImagePath = "/nfcu/images/credit-card_purple.png";
-	var productImagePathBlank = "/nfcu/images/credit-card_blank.png";
+	var redCardImagePath = "images/credit-card_red.png";
+	var blueCardImagePath = "images/credit-card_blue.png";
+	var greenCardImagePath = "images/credit-card_green.png";
+	var pinkCardImagePath = "images/credit-card_pink.png";
+	var purpleCardImagePath = "images/credit-card_purple.png";
+	var productImagePathBlank = "images/credit-card_blank.png";
 
   function showFooter() {
     $stickyCompare.addClass(classVisible);
